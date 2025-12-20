@@ -1,8 +1,15 @@
 import React from 'react'
+import NavBar from './components/NavBar.jsx'
+import Hero from './components/Hero.jsx'
+import ProductViewer from './components/ProductViewer.jsx'
 
 const App = () => {
   return (
-    <h1 className="flex flex-col items-center p-7 rounded-2xl">こんちゃ！</h1>
+    <main>
+        <NavBar/>
+        <Hero/>
+        <ProductViewer/>
+    </main>
   )
 }
 
