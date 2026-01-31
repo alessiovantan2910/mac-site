@@ -1,7 +1,7 @@
 import useMackbookStore from "../store";
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
-import { StudioLight } from "./three/StudioLight";
+import { StudioLights } from "./three/StudioLights";
 import { useMediaQuery } from "react-responsive";
 import ModelSwitcher from "./three/ModelSwitcher";
 
@@ -66,7 +66,7 @@ const ProductViewer = () => {
       >
         {/* <ambientLight intensity={20} />
         <directionalLight intensity={0.5} position={[5, 5, 5]} /> */}
-        <StudioLight />
+        <StudioLights />
         <ModelSwitcher
           scale={isMobile ? scale - 0.03 : scale}
           isMobile={isMobile}

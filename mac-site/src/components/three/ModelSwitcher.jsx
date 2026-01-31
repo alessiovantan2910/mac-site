@@ -3,7 +3,7 @@ import { PresentationControls } from "@react-three/drei";
 import { useRef } from "react";
 import { MacBookModel16 } from "../models/Macbook-16";
 import { MacBookModel14 } from "../models/Macbook-14";
-import { StudioLight } from "./StudioLight";
+import { StudioLights } from "./StudioLights";
 import gsap from "gsap";
 
 const OFFSET_DISTANCE = 5;
@@ -63,7 +63,7 @@ const ModelSwitcher = ({ scale, isMobile }) => {
 
   return (
     <>
-      <StudioLight />
+      <StudioLights />
 
       <PresentationControls {...controlConfig}>
         <group ref={largeMacbookRef}>

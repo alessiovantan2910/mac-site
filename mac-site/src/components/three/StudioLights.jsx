@@ -1,6 +1,6 @@
 import { Environment, Lightformer } from "@react-three/drei";
 
-export const StudioLight = () => {
+export const StudioLights = () => {
   return (
     <group name="lights">
       <Environment resolution={250}>
