@@ -20,14 +20,14 @@ const Performance = () => {
           
             gsap.fromTo(
                 ".content p",
-                { opacity: 0, y: 10 },
+                { autoAlpha: 0, y: 24 },
                 {
-                    opacity: 3,
+                    autoAlpha: 1,
                     y: 0,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: ".content p",
-                        start: "top bottom",
+                        start: "top 80%",
                         end: "top center",
                         scrub: true,
                     }
