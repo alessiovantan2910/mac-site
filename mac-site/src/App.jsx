@@ -1,31 +1,23 @@
-import React from 'react'
-import NavBar from './components/NavBar.jsx'
-import Hero from './components/Hero.jsx'
-import ProductViewer from './components/ProductViewer.jsx'
-import gsap from 'gsap'
-import  { ScrollTrigger, } from 'gsap/all'
-import Showcase from './components/Showcase.jsx'
-import Performance from './components/Perfomance.jsx'
-import Features from './components/Features.jsx'
-import Highlights from './components/Highlights.jsx'
-import Footer from './components/Footer.jsx'
+import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
+import ProductViewer from "./components/ProductViewer";
+import Showcase from "./components/Showcase";
+import Performance from "./components/Performance";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import Feature from "./components/Feature";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const App = () => {
+export default function App() {
   return (
     <main>
-        <NavBar/>
-        <Hero/>
-        <ProductViewer/>
-        <Showcase/>
-        <Performance/>
-        <Features/>
-        <Highlights/>
-        <Footer/>
+      <NavBar />
+      <Hero />
+      <ProductViewer />
+      <Showcase />
+      <Performance />
+      <Feature />
     </main>
-  )
+  );
 }
-
-export default App
-
