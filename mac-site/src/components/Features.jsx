@@ -15,7 +15,7 @@ const ModelScroll = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 1024px)'})
     const { setTexture } = useMacbookStore();
 
-    // Pre-load all feature videos during component mount
+    //すべての動画を読み込むロジック
     useEffect(() => {
         featureSequence.forEach((feature) => {
             const v = document.createElement('video');
@@ -33,7 +33,7 @@ const ModelScroll = () => {
     }, []);
 
     useGSAP(() => {
-        // 3D MODEL ROTATION ANIMATION
+        // #D MODEL 基礎ロジック
         const modelTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#f-canvas',
@@ -43,23 +43,12 @@ const ModelScroll = () => {
                 pin: true,
             }
         });
-
-        // SYNC THE FEATURE CONTENT
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '#f-canvas',
-                start: 'top center',
-                end: 'bottom  top',
-                scrub: 1,
-            }
-        })
-
-        // 3D SPIN
+           // 3Dのロジョックを読み込んで回転させる
         if(groupRef.current) {
             modelTimeline.to(groupRef.current.rotation, { y: Math.PI * 2, ease: 'power1.inOut'})
         }
 
-        // Content & Texture Sync
+        // 動画を回転する時に上書きする（回転するたびに動画が変わる
         timeline
             .call(() => setTexture('/videos/feature-1.mp4'))
             .to('.box1', { opacity: 1, y: 0, delay: 1 })
@@ -76,6 +65,18 @@ const ModelScroll = () => {
             .call(() => setTexture('/videos/feature-5.mp4'))
             .to('.box5', { opacity: 1, y: 0 })
     }, []);
+
+        // SYNC THE FEATURE CONTENT
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#f-canvas',
+                start: 'top center',
+                end: 'bottom  top',
+                scrub: 1,
+            }
+        })
+
+
 
     return (
         <group ref={groupRef}>
